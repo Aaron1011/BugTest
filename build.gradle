@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven {
+            name = 'oss-sonatype-public'
+            url = 'https://oss.sonatype.org/content/repositories/public/'
+        }
+        maven {
+            name = 'forge'
+            url = 'http://files.minecraftforge.net/maven/'
+        }
+        maven {
+            url = 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+defaultTasks 'clean', 'build'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+minecraft {
+    forgeVersion = 1694
+    runDir = 'run'
+    mappings = 'snapshot_20160118'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        name = 'oss-sonatype-public'
+        url = 'https://oss.sonatype.org/content/repositories/public/'
+    }
+}
