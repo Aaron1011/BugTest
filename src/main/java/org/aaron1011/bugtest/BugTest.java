@@ -37,7 +37,7 @@ public final class BugTest {
         if (true) {
             try {
 
-            } catch (Throwable e) {
+            } catch (Exception e) {
 
             }
         }
